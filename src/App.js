@@ -1,7 +1,14 @@
+import Menu from './components/Menu'
+import InputsDisplayer from './components/InputsDisplayer'
+import Footer from './components/Footer'
 
 function App() {
   return (
-    <p>Hey ! Let's get started shall we ?</p>
+    <div className="app">
+      <Menu />
+      <InputsDisplayer />
+      <Footer />
+    </div>
   );
 }
 
