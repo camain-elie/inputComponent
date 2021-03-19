@@ -45,7 +45,7 @@ const InputsDisplayer = () => {
             </div>
 
             <div className="inputsDisplayer__row">
-                <InputWrapper fmultiline row="4" />
+                <InputWrapper multiline row="4" />
             </div>
 
         </div>
