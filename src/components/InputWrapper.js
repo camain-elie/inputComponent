@@ -1,26 +1,28 @@
+import './_inputWrapper.scss'
+
 import Input from "./Input"
 
-const InputWrapper = (props) => {
+const InputWrapper = ({value, helperText, hover, focus, startIcon, endIcon, size, fullWidth, label, multiline, row, error, disabled}) => {
     
     //let wrapperText = ``
     //let classList = ``
-    console.log(props)
+
     return (
         <div className="inputWrapper" >
-            <p className={`inputWrapper__description${props.hover || props.focus ? '--pseudoclass' : ''}`}>
-                {props.hover ? '&:hover' : (props.focus ? '&:focus' : (
-                    `<Input ${props.helperText ? `helperText="${props.helperText}"` : ''}
-                    ${props.value ? `value="${props.value}"` : ''}
-                    ${props.startIcon ? 'startIcon' : (props.endIcon ? 'endIcon': '')}
-                    ${props.size ? `size="${props.size}"` : ''}
-                    ${props.fullWidth ? 'fullWidth' : ''}
-                    ${props.label ? `label="${props.label}'` : ''}
-                    ${props.multiline ? `multiline${props.row ? ` row="${props.row}"` : ''}` : ''}
-                    ${props.error ? 'error' : ''}
-                    ${props.disabled ? 'disabled' : ''} />`
+            <p className={`inputWrapper__description${hover || focus ? '--pseudoclass' : ''}`}>
+                {hover ? '&:hover' : (focus ? '&:focus' : (
+                    `<Input ${helperText ? `helperText="${helperText}"` : ''}
+                    ${value ? `value="${value}"` : ''}
+                    ${startIcon ? 'startIcon' : (endIcon ? 'endIcon': '')}
+                    ${size ? `size="${size}"` : ''}
+                    ${fullWidth ? 'fullWidth' : ''}
+                    ${label ? `label="${label}'` : ''}
+                    ${multiline ? `multiline${row ? ` row="${row}"` : ''}` : ''}
+                    ${error ? 'error' : ''}
+                    ${disabled ? 'disabled' : ''} />`
                 ))}
             </p>
-            <Input {...props} />
+            <Input value={value} hover focus startIcon endIcon size={size} fullWidth label={label} multiline row={row} error disabled />
         </div>
     )
 }
