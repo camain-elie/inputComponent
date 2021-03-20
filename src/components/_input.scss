@@ -1,0 +1,95 @@
+$error-color: #D32F2F;
+$hover-color: #333333;
+$focus-color: #2962FF;
+$default-color: #828282;
+
+.input{
+    width: 200px;
+    height: 56px;
+    border: 1px solid $default-color;
+    border-radius: 8px;
+    box-sizing: border-box;
+
+    &.input--focus, &:focus{
+        border: 1px solid $focus-color;
+        &:hover{
+            border: 1px solid $focus-color;
+        }
+        &.input--error{
+            border: 1px solid $error-color;
+            &:hover{
+                border: 1px solid $error-color;
+            }
+        }
+    }
+    &--hover, &:hover{
+        border: 1px solid $hover-color;
+        &.input--error{
+            border: 1px solid $hover-color;
+        }
+    }
+
+    &--error, &--error:focus{
+        border: 1px solid $error-color;
+        &:hover{
+            border: 1px solid $hover-color;
+        }
+    }
+
+    &--disabled{
+        pointer-events: none;
+        background: #F2F2F2;
+        border: 1px solid #E0E0E0;
+    }
+
+    &__helperText{
+
+    }
+
+    &__startIcon, &__endIcon{
+
+    }
+
+    &--text{
+
+    }
+
+    &--sm{
+        height: 40px;
+    }
+    &--md{
+        height: 56px;
+    }
+    &--lg{
+        height: 72px;
+    }
+
+    &--fullWidth{
+        width: 100%;
+    }
+
+    &--multiline{
+
+    }
+
+    &::-moz-focus-inner{
+        border: none;
+    }
+}
+
+::-moz-focus-inner{
+    border: none;
+}
+:focus{
+    outline: none;
+}
+
+input, label{
+    display: block;
+}
+
+label{
+    &:focus{
+        color: $focus-color;
+    }
+}

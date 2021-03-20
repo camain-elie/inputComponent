@@ -1,7 +1,7 @@
 import './_inputsDisplayer.scss'
 
 import InputWrapper from './InputWrapper'
-import Input from './Input'
+
 
 const InputsDisplayer = () => {
     return (
@@ -9,7 +9,6 @@ const InputsDisplayer = () => {
             
             <h1 className="inputsDisplayer__title">Inputs</h1>
             
-            <Input value="test valu"/>
             
             <div className="inputsDisplayer__row">
                 <InputWrapper />

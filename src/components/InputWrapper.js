@@ -2,13 +2,13 @@ import './_inputWrapper.scss'
 
 import Input from "./Input"
 
-const InputWrapper = ({value, helperText, hover, focus, startIcon, endIcon, size, fullWidth, label, multiline, row, error, disabled}) => {
+const InputWrapper = ({value, helperText, placeholderText, hover, focus, startIcon, endIcon, size, fullWidth, label, multiline, row, error, disabled}) => {
     
     //let wrapperText = ``
     //let classList = ``
 
     return (
-        <div className="inputWrapper" >
+        <div className={`inputWrapper ${fullWidth ? 'inputWrapper--full' : ''}`} >
             <p className={`inputWrapper__description${hover || focus ? '--pseudoclass' : ''}`}>
                 {hover ? '&:hover' : (focus ? '&:focus' : (
                     `<Input ${helperText ? `helperText="${helperText}"` : ''}
@@ -22,9 +22,14 @@ const InputWrapper = ({value, helperText, hover, focus, startIcon, endIcon, size
                     ${disabled ? 'disabled' : ''} />`
                 ))}
             </p>
-            <Input value={value} hover focus startIcon endIcon size={size} fullWidth label={label} multiline row={row} error disabled />
+            <Input value={value} helperText={helperText} hover={hover} focus={focus} startIcon endIcon size={size} fullWidth={fullWidth} label={label} multiline={multiline} row={row} error={error} disabled={disabled} />
         </div>
     )
+}
+
+InputWrapper.defaultProps = {
+    label: 'Label',
+    placeholderText: 'Placeholder',
 }
 
 export default InputWrapper

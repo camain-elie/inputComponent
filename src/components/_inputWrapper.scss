@@ -2,9 +2,10 @@
 
 
 .inputWrapper{
-    min-width: 250px;
-    height: 100px;
+
     margin: 5px 40px 0 0;
+
+
 
     &__description{
         font-family: 'Ubuntu Mono', monospace;
@@ -23,5 +24,9 @@
             color: #828282;
             margin: 0 0 15px 0;
         }
+    }
+
+    &--full{
+        width: 95%;
     }
 }
