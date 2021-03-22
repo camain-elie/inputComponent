@@ -32,8 +32,8 @@ const InputsDisplayer = () => {
             </div>
 
             <div className="inputsDisplayer__row">
-                <InputWrapper startIcon />
-                <InputWrapper endIcon />
+                <InputWrapper startIcon="phone" />
+                <InputWrapper endIcon="https" />
             </div>
 
             <div className="inputsDisplayer__row">

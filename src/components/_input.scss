@@ -1,3 +1,5 @@
+@import '~material-design-icons/iconfont/material-icons.css';
+
 $error-color: #D32F2F;
 $hover-color: #333333;
 $focus-color: #2962FF;
@@ -9,6 +11,7 @@ $default-color: #828282;
     border: 1px solid $default-color;
     border-radius: 8px;
     box-sizing: border-box;
+    padding: 0 20px;
 
     &.input--focus, &:focus{
         border: 1px solid $focus-color;
@@ -40,14 +43,20 @@ $default-color: #828282;
         pointer-events: none;
         background: #F2F2F2;
         border: 1px solid #E0E0E0;
+        &:hover{
+            border: 1px solid #E0E0E0;
+        }
     }
 
     &__helperText{
 
     }
 
-    &__startIcon, &__endIcon{
-
+    &--start-icon{
+        padding: 0 20px 0 35px;
+    }
+    &--end-icon{
+        padding: 0 35px 0 20px;
     }
 
     &--text{
@@ -84,12 +93,39 @@ $default-color: #828282;
     outline: none;
 }
 
-input, label{
+input, label, textarea{
     display: block;
 }
 
 label{
+    color: $default-color;
     &:focus{
         color: $focus-color;
     }
+    &:hover{
+        color: $hover-color;
+    }
+}
+
+textarea{
+   resize: none;
+}
+
+.material-icons{
+    position: relative;
+    top: 3px;
+    font-size: 1.3em;
+    
+    margin: 0 8px;
+}
+
+.startIcon{
+    position: relative;
+    top: -40px;
+}
+
+.endIcon{
+    position: relative;
+    float: right;
+    top: -40px;
 }
