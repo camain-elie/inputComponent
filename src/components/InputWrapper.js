@@ -3,9 +3,6 @@ import './_inputWrapper.scss'
 import Input from "./Input"
 
 const InputWrapper = ({value, helperText, placeHolderText, hover, focus, startIcon, endIcon, size, fullWidth, label, multiline, row, error, disabled}) => {
-    
-    //let wrapperText = ``
-    //let classList = ``
 
     return (
         <div className={`inputWrapper ${fullWidth ? 'inputWrapper--full' : ''}`} >

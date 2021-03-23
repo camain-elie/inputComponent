@@ -1,33 +1,48 @@
 import './_input.scss'
+import React, { Component } from 'react'
 
-/* /!\ Warning /!\ An input in a React component should always be controlled (onChange usually),
-it is easier done with a Class component ! */
-function Input({ value, helperText, placeHolderText, hover, focus, startIcon,
-    endIcon, size, fullWidth, label, multiline, row, error, disabled }) {
+class Input extends Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            ...props,
+            value: '',
+            classList: `input
+            ${props.hover ? 'input--hover' : ''}
+            ${props.focus ? 'input--focus' : ''}
+            ${props.size === 'sm' ? 'input--sm' :
+                (props.size === 'md' ? 'input--md' :
+                (props.size === 'lg' ? 'input--lg' : ''))}
+            ${props.fullWidth ? 'input--fullWidth' : ''}
+            ${props.startIcon ? 'input--start-icon' : ''}
+            ${props.endIcon ? 'input--end-icon' : ''}
+            ${props.multiline ? 'input--multiline' : ''}
+            ${props.disabled ? 'input--disabled' : ''}
+            ${props.error ? 'input--error' : ''}
+        `
+        }
+    }
 
-    let classList = `input
-        ${hover ? 'input--hover' : ''}
-        ${focus ? 'input--focus' : ''}
-        ${size === 'sm' ? 'input--sm' : (size === 'md' ? 'input--md' : (size === 'lg' ? 'input--lg' : ''))}
-        ${fullWidth ? 'input--fullWidth' : ''}
-        ${startIcon ? 'input--start-icon' : ''}
-        ${endIcon ? 'input--end-icon' : ''}
-        ${multiline ? 'input--multiline' : ''}
-        ${disabled ? 'input--disabled' : ''}
-        ${error ? 'input--error' : ''}
-    `
+    //Arrow fx for binding
+    onChange = (event) => {
+        this.setState({value: event.target.value})
+        
+    }
 
-    return (
-        <div className={classList}>
-            <label>{label}</label>
-            {startIcon && <i className="material-icons startIcon">{startIcon}</i>}
-            {multiline ? <textarea className="" placeholder={placeHolderText} value={value} rows={row} /> :
-                <input className="" placeholder={placeHolderText} value={value} />}
-            {endIcon && <i className="material-icons endIcon">{endIcon}</i>}
-
-            {helperText && <p className="helperText">{helperText}</p>}
-        </div>
-    )
+    render(){
+        return (
+            <div className={this.state.classList}>
+                <label>{this.state.label}</label>
+                {this.state.startIcon && <i className="material-icons startIcon">{this.state.startIcon}</i>}
+                {this.state.multiline ? 
+                    <textarea onChange={this.onChange} placeholder={this.state.placeHolderText} value={this.state.value} rows={this.state.row} /> :
+                    <input onChange={this.onChange} placeholder={this.state.placeHolderText} value={this.state.value} />}
+                {this.state.endIcon && <i className="material-icons endIcon">{this.state.endIcon}</i>}
+    
+                {this.state.helperText && <p className="helperText">{this.state.helperText}</p>}
+            </div>
+        )
+    }
 }
 
 Input.defaultProps = {

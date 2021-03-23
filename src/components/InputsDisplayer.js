@@ -9,7 +9,6 @@ const InputsDisplayer = () => {
             
             <h1 className="inputsDisplayer__title">Inputs</h1>
             
-            
             <div className="inputsDisplayer__row">
                 <InputWrapper />
                 <InputWrapper hover />

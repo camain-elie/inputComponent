@@ -15,7 +15,7 @@ $default-color: #828282;
     padding: 0;
     margin: 0;
     font-family: 'Noto Sans JP', sans-serif;
-
+    
     input{
         position: relative;
         top: -18px;
@@ -23,14 +23,14 @@ $default-color: #828282;
         padding: 0 15px;
         width: 80%;
         height: 100%;
-        
         border-radius: 8px;
         border: none;
         background: rgba(0,0,0,0);
-        
         font-weight: 500;
         font-size: 14px;
         line-height: 20px;
+        color: $hover-color;
+        font-family: 'Noto Sans JP', sans-serif;
     }
 
     label{
@@ -44,7 +44,6 @@ $default-color: #828282;
         font-weight: normal;
         font-size: 12px;
         line-height: 17px;
- 
     }
 
     .helperText{
@@ -121,7 +120,6 @@ $default-color: #828282;
     }
 
     &--start-icon, &--end-icon{
-
         .startIcon, .endIcon{
             display: inline-block;
             position: relative;
@@ -142,8 +140,6 @@ $default-color: #828282;
         width: 100%;
     }
 
-
-
     textarea{
         position: relative;
         top: -18px;
@@ -151,56 +147,21 @@ $default-color: #828282;
         padding: 0 15px;
         width: 80%;
         height: 100%;
-        
         border-radius: 8px;
         border: none;
         background: rgba(0,0,0,0);
-        
         font-weight: 500;
         font-size: 14px;
         line-height: 20px;
-
+        font-family: 'Noto Sans JP', sans-serif;
+        color: $hover-color;
         resize: none;
     }
     &.input--multiline{
         padding-top: 1px; 
         height: 90%;
-     
     }
 }
-
-
-
-
-
-/*
-
-    &--text{
-
-    }
-
-    &--sm{
-        height: 40px;
-    }
-    &--md{
-        height: 56px;
-    }
-    &--lg{
-        height: 72px;
-    }
-
-    &--fullWidth{
-        width: 100%;
-    }
-
-    &--multiline{
-
-    }
-
-    &::-moz-focus-inner{
-        border: none;
-    }
-}*/
 
 ::-moz-focus-inner{
     border: none;
@@ -213,43 +174,5 @@ $default-color: #828282;
     position: relative;
     top: 3px;
     font-size: 1.3em;
-    
     margin: 0 8px;
 }
-
-/*input, label, textarea{
-    display: block;
-}
-
-label{
-    color: $default-color;
-    &:focus{
-        color: $focus-color;
-    }
-    &:hover{
-        color: $hover-color;
-    }
-}
-
-textarea{
-   resize: none;
-}
-
-.material-icons{
-    position: relative;
-    top: 3px;
-    font-size: 1.3em;
-    
-    margin: 0 8px;
-}
-
-.startIcon{
-    position: relative;
-    top: -40px;
-}
-
-.endIcon{
-    position: relative;
-    float: right;
-    top: -40px;
-}*/
