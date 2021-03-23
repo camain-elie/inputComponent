@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400&display=swap');
 @import '~material-design-icons/iconfont/material-icons.css';
 
 $error-color: #D32F2F;
@@ -10,32 +11,103 @@ $default-color: #828282;
     height: 56px;
     border: 1px solid $default-color;
     border-radius: 8px;
-    box-sizing: border-box;
-    padding: 0 20px;
+    box-sizing: content-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Noto Sans JP', sans-serif;
 
-    &.input--focus, &:focus{
-        border: 1px solid $focus-color;
-        &:hover{
-            border: 1px solid $focus-color;
+    input{
+        position: relative;
+        top: -18px;
+        margin: 0;
+        padding: 0 15px;
+        width: 80%;
+        height: 100%;
+        
+        border-radius: 8px;
+        border: none;
+        background: rgba(0,0,0,0);
+        
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    label{
+        display: block;
+        position: relative;
+        padding: 0;
+        margin: 0;
+        top: -18px;
+        color: $default-color;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 17px;
+ 
+    }
+
+    .helperText{
+        position: relative;
+        top: -15px;
+        color: $default-color;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 14px;
+    }
+
+    &--hover{
+        pointer-events: none;
+        border: 1px solid $hover-color;
+        label{
+            color: $hover-color;
         }
-        &.input--error{
+    }
+
+    &--focus{
+        pointer-events: none;
+        border: 1px solid $focus-color;
+        label{
+            color: $focus-color;
+        }
+    }
+
+    &:hover{
+        border: 1px solid $hover-color;
+        label, .helperText, .startIcon, .endIcon{
+            color: $hover-color;
+        }
+    }
+
+    &:focus-within{
+        border: 1px solid blue;
+        label, .helperText, .startIcon, .endIcon{
+            color: $focus-color;
+        }
+    }
+
+
+    &--error{
+        border: 1px solid $error-color;
+        label, .helperText{
+            color: $error-color;
+        }
+
+        &:focus-within{
             border: 1px solid $error-color;
-            &:hover{
-                border: 1px solid $error-color;
+            label, .helperText{
+                color: $error-color;
             }
         }
-    }
-    &--hover, &:hover{
-        border: 1px solid $hover-color;
-        &.input--error{
+        &.input--hover{
             border: 1px solid $hover-color;
+            label, .helperText{
+                color: black;
+            }
         }
-    }
-
-    &--error, &--error:focus{
-        border: 1px solid $error-color;
-        &:hover{
-            border: 1px solid $hover-color;
+        .input--hover + label{
+            color: black;
         }
     }
 
@@ -48,16 +120,28 @@ $default-color: #828282;
         }
     }
 
-    &__helperText{
+    &--start-icon, &--end-icon{
 
+        .startIcon, .endIcon{
+            display: inline-block;
+            position: relative;
+            top: -12px;
+            color: $default-color;
+        }
+        input{
+            display: inline-block;
+            width: 65%;
+        }
     }
 
-    &--start-icon{
-        padding: 0 20px 0 35px;
-    }
-    &--end-icon{
-        padding: 0 35px 0 20px;
-    }
+
+}
+
+
+
+
+
+/*
 
     &--text{
 
@@ -84,7 +168,7 @@ $default-color: #828282;
     &::-moz-focus-inner{
         border: none;
     }
-}
+}*/
 
 ::-moz-focus-inner{
     border: none;
@@ -93,7 +177,15 @@ $default-color: #828282;
     outline: none;
 }
 
-input, label, textarea{
+.material-icons{
+    position: relative;
+    top: 3px;
+    font-size: 1.3em;
+    
+    margin: 0 8px;
+}
+
+/*input, label, textarea{
     display: block;
 }
 
@@ -128,4 +220,4 @@ textarea{
     position: relative;
     float: right;
     top: -40px;
-}
+}*/
