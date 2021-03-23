@@ -37,7 +37,7 @@ const InputsDisplayer = () => {
             </div>
 
             <div className="inputsDisplayer__row">
-                <InputWrapper value="text" />
+                <InputWrapper value="Text" />
             </div>
 
             <div className="inputsDisplayer__row">

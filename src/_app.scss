@@ -3,7 +3,11 @@
 }
 
 .inputsDisplayer{
-    margin-left: 237px;
-    width: 85%;
-
+    margin-left: 15%;
+    width: 80%;
+    @media(max-width: 800px){
+        margin-left: 0;
+        width: 100%;
+    }
 }
+

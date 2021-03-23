@@ -1,6 +1,9 @@
 import './_input.scss'
 
-const Input = ({value, helperText, placeHolderText, hover, focus, startIcon, endIcon, size, fullWidth, label, multiline, row, error, disabled}) => {
+/* /!\ Warning /!\ An input in a React component should always be controlled (onChange usually),
+it is easier done with a Class component ! */
+function Input({ value, helperText, placeHolderText, hover, focus, startIcon,
+    endIcon, size, fullWidth, label, multiline, row, error, disabled }) {
 
     let classList = `input
         ${hover ? 'input--hover' : ''}
@@ -9,17 +12,19 @@ const Input = ({value, helperText, placeHolderText, hover, focus, startIcon, end
         ${fullWidth ? 'input--fullWidth' : ''}
         ${startIcon ? 'input--start-icon' : ''}
         ${endIcon ? 'input--end-icon' : ''}
+        ${multiline ? 'input--multiline' : ''}
         ${disabled ? 'input--disabled' : ''}
         ${error ? 'input--error' : ''}
     `
 
     return (
         <div className={classList}>
-            <label >{label}</label>
-                {startIcon && <i className="material-icons startIcon">{startIcon}</i>}
-                <input className="" placeholder={placeHolderText} />
-                {endIcon && <i className="material-icons endIcon">{endIcon}</i>}
-            
+            <label>{label}</label>
+            {startIcon && <i className="material-icons startIcon">{startIcon}</i>}
+            {multiline ? <textarea className="" placeholder={placeHolderText} value={value} rows={row} /> :
+                <input className="" placeholder={placeHolderText} value={value} />}
+            {endIcon && <i className="material-icons endIcon">{endIcon}</i>}
+
             {helperText && <p className="helperText">{helperText}</p>}
         </div>
     )
